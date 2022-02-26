@@ -25,7 +25,7 @@ public class StartCommand extends ServiceCommand {
         logger.debug(String.format("User %s. Started command %s", userName,
                 this.getCommandIdentifier()));
         sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
-                "Let's start! If you need help, click /help");
+                "Let's start! Enter location name to get weather. \nIf you need help, click /help");
         logger.debug(String.format("User %s. Finished command %s", userName,
                 this.getCommandIdentifier()));
     }

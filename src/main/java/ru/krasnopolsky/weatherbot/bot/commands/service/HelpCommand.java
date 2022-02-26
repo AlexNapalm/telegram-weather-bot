@@ -12,7 +12,7 @@ import ru.krasnopolsky.weatherbot.Utils;
  */
 public class HelpCommand extends ServiceCommand {
 
-    private Logger logger = LoggerFactory.getLogger(HelpCommand.class);
+    private final Logger logger = LoggerFactory.getLogger(HelpCommand.class);
 
     public HelpCommand(String identifier, String description) {
         super(identifier, description);
@@ -22,15 +22,15 @@ public class HelpCommand extends ServiceCommand {
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         String userName = Utils.getUserName(user);
 
-        logger.debug(String.format("Пользователь %s. Начато выполнение команды %s", userName,
+        logger.debug(String.format("User %s. Started execution of command %s", userName,
                 this.getCommandIdentifier()));
         sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
-                "This is test bot description\n\n" +
+                "Simple weather bot, that gets current weather for entered location\n\n" +
                         "❗*Commands list*\n" +
-                        "/start\n" +
+                        "/start - start\n" +
                         "/help - help\n\n" +
-                "Additional info here");
-        logger.debug(String.format("Пользователь %s. Завершено выполнение команды %s", userName,
+                "Your ads could be here");
+        logger.debug(String.format("User %s. Finished execution of command %s", userName,
                 this.getCommandIdentifier()));
     }
 }

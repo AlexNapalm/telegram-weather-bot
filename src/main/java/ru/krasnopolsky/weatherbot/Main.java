@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new Bot("NapalmBurnBot", "1947025002:AAFwpVQMYAdX8010_nAfRmLMbWcCuUDjbS4"));
+            botsApi.registerBot(new Bot());
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
